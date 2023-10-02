@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Job 1: Install Puppet Agent') {
+            steps {
+                // Execute Job 1: Install and configure Puppet agent
+                sh 'sh scripts/job1_install_puppet.sh'
+            }
+        }
+        stage('Job 2: Configure Docker with Ansible') {
+            steps {
+                // Execute Job 2: Push Ansible configuration to install Docker
+                sh 'sh scripts/job2_configure_docker.sh'
+            }
+        }
+    }
+}
+
